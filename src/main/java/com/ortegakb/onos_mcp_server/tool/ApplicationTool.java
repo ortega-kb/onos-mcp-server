@@ -3,8 +3,8 @@ package com.ortegakb.onos_mcp_server.tool;
 import com.ortegakb.onos_mcp_server.model.Application;
 import com.ortegakb.onos_mcp_server.service.OnosService;
 import lombok.RequiredArgsConstructor;
-import org.springaicommunity.mcp.annotation.McpTool;
-import org.springaicommunity.mcp.annotation.McpToolParam;
+import org.springframework.ai.tool.annotation.Tool;
+import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,14 +15,14 @@ public class ApplicationTool {
 
     private final OnosService onosService;
 
-    @McpTool(name = "list-applications", description = "Get all applications from ONOS controller")
+    @Tool(name = "list-applications", description = "Retrieve a list of all applications installed on the ONOS controller, showing their names, IDs, versions, and current states (e.g., ACTIVE, INSTALLED).")
     public List<Application> listApplications() {
         return onosService.getAllApplications();
     }
 
-    @McpTool(name = "get-application", description = "Get a specific application by its name from ONOS controller")
+    @Tool(name = "get-application", description = "Retrieve detailed information about a specific ONOS application by its name. Includes description, origin, required applications, and specific features provided.")
     public Application getApplication(
-            @McpToolParam(description = "Application name (e.g. org.onosproject.sdnip)") String name) {
+            @ToolParam(description = "The unique name of the application (e.g., 'org.onosproject.fwd')") String name) {
         return onosService.getApplicationByName(name);
     }
 

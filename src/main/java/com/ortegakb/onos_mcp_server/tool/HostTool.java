@@ -4,8 +4,8 @@ import com.ortegakb.onos_mcp_server.model.Host;
 import com.ortegakb.onos_mcp_server.service.OnosService;
 import lombok.RequiredArgsConstructor;
 
-import org.springaicommunity.mcp.annotation.McpTool;
-import org.springaicommunity.mcp.annotation.McpToolParam;
+import org.springframework.ai.tool.annotation.Tool;
+import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,13 +16,14 @@ public class HostTool {
 
     private final OnosService onosService;
 
-    @McpTool(name = "list-hosts", description = "Get all hosts from ONOS controller")
+    @Tool(name = "list-hosts", description = "Retrieve a list of all end-node hosts discovered by the ONOS controller, including their MAC addresses, IP addresses, and their location in the network topology.")
     public List<Host> listHosts() {
         return onosService.getAllHosts();
     }
 
-    @McpTool(name = "get-host", description = "Get a specific host by its ID from ONOS controller")
-    public Host getHost(@McpToolParam(description = "Host ID (e.g. 9A:A7:E1:2B:04:D8/None)") String id) {
+    @Tool(name = "get-host", description = "Retrieve detailed information about a specific end-node host by its ID. Includes its MAC address, VLAN ID, associated IP addresses, and physical locations (switch DPID and port).")
+    public Host getHost(
+            @ToolParam(description = "The unique identifier of the host (e.g., '00:00:00:00:00:01/None')") String id) {
         return onosService.getHostById(id);
     }
 

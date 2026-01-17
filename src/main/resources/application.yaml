@@ -13,9 +13,9 @@ spring:
                 version: 0.0.1
 
 logging:
-    pattern:
-        console: 
-
+    level:
+        root: WARN
+        "[org.springframework.cloud.openfeign]": DEBUG
 
 onos:
     controller:
