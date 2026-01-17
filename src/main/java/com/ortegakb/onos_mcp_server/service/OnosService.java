@@ -2,6 +2,7 @@ package com.ortegakb.onos_mcp_server.service;
 
 import com.ortegakb.onos_mcp_server.client.OnosControllerClient;
 import com.ortegakb.onos_mcp_server.model.Application;
+import com.ortegakb.onos_mcp_server.model.Host;
 import com.ortegakb.onos_mcp_server.model.Device;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ public class OnosService {
 
     private final OnosControllerClient onosControllerClient;
 
+    // Devices
     public List<Device> getAllDevices() {
         return onosControllerClient.getDevices().devices();
     }
@@ -22,11 +24,21 @@ public class OnosService {
         return onosControllerClient.getDevice(id);
     }
 
+    // Applications
     public List<Application> getAllApplications() {
         return onosControllerClient.getApplications().applications();
     }
 
     public Application getApplicationByName(String name) {
         return onosControllerClient.getApplication(name);
+    }
+
+    // Hosts
+    public List<Host> getAllHosts() {
+        return onosControllerClient.getHosts().hosts();
+    }
+
+    public Host getHostById(String id) {
+        return onosControllerClient.getHost(id);
     }
 }
