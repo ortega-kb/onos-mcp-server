@@ -33,6 +33,14 @@ public class OnosService {
         return onosControllerClient.getApplication(name);
     }
 
+    public void activateApplication(String name) {
+        onosControllerClient.activateApplication(name);
+    }
+
+    public void deactivateApplication(String name) {
+        onosControllerClient.deactivateApplication(name);
+    }
+
     // Hosts
     public List<Host> getAllHosts() {
         return onosControllerClient.getHosts().hosts();

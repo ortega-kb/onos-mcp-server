@@ -26,4 +26,16 @@ public class ApplicationTool {
         return onosService.getApplicationByName(name);
     }
 
+    @Tool(name = "activate-application", description = "Activate an ONOS application by its name.")
+    public void activateApplication(
+            @ToolParam(description = "The unique name of the application (e.g., 'org.onosproject.fwd')") String name) {
+        onosService.activateApplication(name);
+    }
+
+    @Tool(name = "deactivate-application", description = "Deactivate an ONOS application by its name.")
+    public void deactivateApplication(
+            @ToolParam(description = "The unique name of the application (e.g., 'org.onosproject.fwd')") String name) {
+        onosService.deactivateApplication(name);
+    }
+
 }
