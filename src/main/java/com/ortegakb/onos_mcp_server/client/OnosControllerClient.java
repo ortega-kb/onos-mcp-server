@@ -7,6 +7,8 @@ import com.ortegakb.onos_mcp_server.model.HostResponse;
 import com.ortegakb.onos_mcp_server.model.Device;
 import com.ortegakb.onos_mcp_server.model.DeviceResponse;
 import com.ortegakb.onos_mcp_server.model.Host;
+import com.ortegakb.onos_mcp_server.model.FlowResponse;
+import com.ortegakb.onos_mcp_server.model.Flow;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,5 +42,15 @@ public interface OnosControllerClient {
 
     @DeleteMapping("/onos/v1/applications/{name}/active")
     void deactivateApplication(@PathVariable("name") String name);
+
+    @GetMapping("/onos/v1/flows")
+    FlowResponse getFlows();
+
+    @GetMapping("/onos/v1/flows/{deviceId}")
+    FlowResponse getDeviceFlows(@PathVariable("deviceId") String deviceId);
+
+    @org.springframework.web.bind.annotation.PostMapping("/onos/v1/flows/{deviceId}")
+    void postFlow(@PathVariable("deviceId") String deviceId,
+            @org.springframework.web.bind.annotation.RequestBody Flow flow);
 
 }

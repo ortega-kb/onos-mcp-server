@@ -4,6 +4,7 @@ import com.ortegakb.onos_mcp_server.client.OnosControllerClient;
 import com.ortegakb.onos_mcp_server.model.Application;
 import com.ortegakb.onos_mcp_server.model.Host;
 import com.ortegakb.onos_mcp_server.model.Device;
+import com.ortegakb.onos_mcp_server.model.Flow;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +40,19 @@ public class OnosService {
 
     public void deactivateApplication(String name) {
         onosControllerClient.deactivateApplication(name);
+    }
+
+    // Flows
+    public List<Flow> getAllFlows() {
+        return onosControllerClient.getFlows().flows();
+    }
+
+    public List<Flow> getFlowsByDeviceId(String deviceId) {
+        return onosControllerClient.getDeviceFlows(deviceId).flows();
+    }
+
+    public void createFlow(String deviceId, Flow flow) {
+        onosControllerClient.postFlow(deviceId, flow);
     }
 
     // Hosts
