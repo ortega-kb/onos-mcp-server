@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: onos-mcp-server
+
+
+
+onos:
+    controller:
+        host: ${ONOS_CONTROLLER_HOST:http://localhost:8181}
+        username: ${ONOS_CONTROLLER_USERNAME:onos}
+        password: ${ONOS_CONTROLLER_PASSWORD:rocks}
+        
