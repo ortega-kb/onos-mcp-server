@@ -123,10 +123,4 @@ The server exposes several tools to the AI model:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details (or add one if missing).
-
----
-
 Created with ❤️ by [ortegakb](https://github.com/ortegakb)
