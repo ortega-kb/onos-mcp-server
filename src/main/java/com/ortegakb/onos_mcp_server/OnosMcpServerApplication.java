@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.ortegakb.onos_mcp_server.tool.ApplicationTool;
 import com.ortegakb.onos_mcp_server.tool.DeviceTool;
+import com.ortegakb.onos_mcp_server.tool.FlowTool;
 import com.ortegakb.onos_mcp_server.tool.HostTool;
 
 @SpringBootApplication
@@ -22,8 +23,9 @@ public class OnosMcpServerApplication {
 	}
 
 	@Bean
-	List<ToolCallback> onosTools(DeviceTool deviceTool, HostTool hostTool, ApplicationTool applicationTool) {
+	List<ToolCallback> onosTools(FlowTool flowTool, DeviceTool deviceTool, HostTool hostTool,
+			ApplicationTool applicationTool) {
 		return List.of(
-				ToolCallbacks.from(deviceTool, hostTool, applicationTool));
+				ToolCallbacks.from(deviceTool, hostTool, applicationTool, flowTool));
 	}
 }
