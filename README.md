@@ -1,4 +1,4 @@
-# ONOS MCP Server 🚀
+# ONOS MCP Server 
 
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.9-brightgreen)](https://spring.io/projects/spring-boot)
 [![Java 21](https://img.shields.io/badge/Java-21-blue)](https://www.oracle.com/java/technologies/downloads/#java21)
@@ -8,17 +8,17 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- 📱 **Application Management**: List, inspect, activate, and deactivate ONOS applications.
-- 🔌 **Device Inventory**: Detailed views of switches, routers, and other network entities.
-- 🏠 **Host Discovery**: Track end-nodes, their locations, and IP/MAC associations.
-- 🌊 **Flow Control**: Full visibility and control over network flows (list, filter by device, and add new flows).
-- 🛠️ **Seamless Integration**: Built with Spring Boot and Spring AI MCP for robust, production-ready performance.
+- **Application Management**: List, inspect, activate, and deactivate ONOS applications.
+- **Device Inventory**: Detailed views of switches, routers, and other network entities.
+- **Host Discovery**: Track end-nodes, their locations, and IP/MAC associations.
+- **Flow Control**: Full visibility and control over network flows (list, filter by device, and add new flows).
+- **Seamless Integration**: Built with Spring Boot and Spring AI MCP for robust, production-ready performance.
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Java 21** or higher.
 - **Maven 3.9+** (or use the included `./mvnw`).
@@ -26,7 +26,7 @@
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 The server connects to ONOS via its REST API. You can configure the connection details in `src/main/resources/application.yaml` or via environment variables.
 
@@ -47,7 +47,7 @@ onos:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Build the project
 ```bash
@@ -61,7 +61,7 @@ onos:
 
 ---
 
-## 🔌 Connecting to MCP Clients
+## Connecting to MCP Clients
 
 To use this server with an MCP client (such as **Claude Desktop** or **Antigravity**), add the following configuration to your `mcp_config.json` (or equivalent configuration file):
 
@@ -89,7 +89,7 @@ To use this server with an MCP client (such as **Claude Desktop** or **Antigravi
 
 ---
 
-## 🛠️ Available MCP Tools
+## Available MCP Tools
 
 The server exposes several tools to the AI model:
 
@@ -114,7 +114,7 @@ The server exposes several tools to the AI model:
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 - **Core**: Java 21, Spring Boot 3.5.9
 - **AI/MCP**: Spring AI Starter MCP Server
@@ -123,4 +123,4 @@ The server exposes several tools to the AI model:
 
 ---
 
-Created with ❤️ by [ortegakb](https://github.com/ortegakb)
+Created with ❤️ by [ortega-kb](https://github.com/ortega-kb)
